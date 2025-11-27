@@ -10,7 +10,8 @@
       "Bash(curl -I http://localhost)",
       "Bash(docker volume:*)",
       "Bash(docker run:*)",
-      "Bash(nslookup:*)"
+      "Bash(nslookup:*)",
+      "Bash(docker ps:*)"
     ],
     "deny": [],
     "ask": []
