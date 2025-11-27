@@ -1,0 +1,163 @@
+/*
+    Theme Name: Flatsome Child
+    Description: This is a child theme for Flatsome Theme
+    Author: UX Themes
+    Template: flatsome
+    Version: 3.0
+*/
+
+.ux-builder-iframe .detailPost-img, .ux-builder-iframe .detailPost-infodate{display:none}
+
+
+/*************** 	ADD CUSTOM CSS HERE.   ***************/
+/* MARK: HEADER */
+#header{ position: sticky; top: 0; background: #fff; transition:none ; -webkit-transition:none ; -moz-transition:none ; -ms-transition:none ; -o-transition:none ; }
+.header-main{max-width: 1236px; margin: auto;}
+.header-main { height: 80px !important; }
+.header-shadow .header-wrapper, .header-wrapper.stuck, .layout-shadow #wrapper{background: #fff;}
+body .header.show-on-scroll, body .stuck .header-main{height: 80px !important;}
+.header-bg-container{display: none;}
+.sticky-jump .stuck:not(.ux-no-animation) { animation: none; }
+
+.logo-left .logo{margin-right: 48px;}
+.nav-uppercase>li>a{color: #3D3D3D !important; font-size: 14px; text-transform: capitalize !important; font-weight: 500 !important;font-family: "Inter", sans-serif !important;}
+.nav-uppercase>li>a:hover{color: #005BAA !important;}
+.nav>li{margin: 0 12px;}
+
+.dev-hidden-menuHam .header-search-lightbox svg{stroke: #3D3D3D !important;}
+.header-search-lightbox a{background: none; box-shadow: none; border: none;display: flex !important ; align-items: center;width: 32px;justify-content: center;}
+.dev-hidden-menuHam .header-button{border: none;}
+
+
+
+/* MARK: MENU CSS */
+.nav>li>a{padding: 30px 0;}
+.nav-dropdown-default { padding: 10px; }
+.nav-dropdown.nav-dropdown-default>li>a{font-size: 14px;color: #3D3D3D !important;}
+.nav-dropdown.nav-dropdown-default>li>a:hover{color:#005BAA !important;}
+.nav-dropdown-has-arrow.nav-dropdown-has-border li.has-dropdown:before{display: none;}
+.nav-dropdown-has-border .nav-dropdown{border: none;}
+.nav-dropdown-has-arrow li.has-dropdown:after{display: none;}
+
+.mobile-nav.nav>li>a{padding:0;}
+.form-flat .button.icon{position: absolute; top: 0; right: 10px;}
+
+
+/* MARK: SEARCH */
+#search-lightbox .searchform input[type="search"]{background: #fff !important;color: #005BAA !important;}
+.searchform-submit .icon-search{color: #005BAA;}
+
+
+
+/* MARK: PAGE CONTAINER */
+.container-page{max-width: 1236px !important;margin: auto;}
+.subcontainer-page{max-width: 1100px !important;margin: auto;}
+.blog-archive{padding:0}
+
+
+/* MARK: PAGINATION CSS */
+.page-numbers{margin-bottom:40px !important;}
+.nav-pagination>li>.current, .nav-pagination>li>a:hover, .nav-pagination>li>span:hover{background: #005BAA;border-color: #005BAA;color: #fff !important;}
+.nav-pagination>li>a, .nav-pagination>li>span{ min-width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 400; color:#3D3D3D !important; border-width: 1px; background: transparent; border-radius: 8px; -webkit-border-radius: 8px; -moz-border-radius: 8px; -ms-border-radius: 8px; -o-border-radius: 8px; border:none; }
+
+.single-page-detail *{color:#333;line-height: 180%;}
+.single-page-detail .img-inner img{margin-bottom: 15px;}
+
+.blog-single{background: #f7f6f6;}
+
+/* MARK: TITLE PAGE DEFINE */
+
+
+/* MARK: BUTTON PAGE DEFINE */
+
+
+/* MARK: HOME - TITLE */
+#content{position: relative;overflow: hidden;}
+
+
+/* MARK: FOOTER */
+.absolute-footer{display: none;}
+.s-footer-container{padding:0 !important; padding-top:80px !important;}
+.s-footer-contain{display: flex;gap:100px;}
+.s-footer-left{flex-basis: 31% !important;max-width: 31% !important;}
+.s-footer-center{flex-basis: calc(69% - 200px - 200px) !important;max-width: calc(69% - 200px - 200px) !important;}
+.s-footer-right{flex-basis: 200px !important;max-width: 200px !important;}
+
+.s-footer-social{margin-top:32px;padding:0;}
+.s-footer-social > .col-inner{display: flex;gap:16px;justify-content: center;}
+.s-footer-social > .col-inner .img{width:32px !important;}
+
+.s-footer-logo{width: 240px !important; margin: auto;}
+.s-footer-title, .s-footer-title *{font-size: 24px;font-weight: 600;color:#111111;margin: 0;}
+
+.s-footer-address h2, .s-footer-address h3, .s-footer-address h4{color:#111111;font-size: 16px;font-weight: 600;text-transform: uppercase;}
+.s-footer-address p{color:#3D3D3D;font-size: 16px;font-weight: 300;}
+.s-footer-info *{color:#3D3D3D;font-size: 16px;margin: 0;}
+.s-footer-info{margin-bottom: 16px;}
+.s-footer-info:last-child{margin-bottom: 0;}
+
+.s-footer-subtitle{margin-bottom: 20px;}
+.s-footer-subtitle *{color:#111111;font-size: 16px;font-weight: 600;text-transform: uppercase;margin: 0;}
+
+.s-footer-menu a{ padding:0; color:#3D3D3D; font-size: 16px; transition: all ease 0.5s; -webkit-transition: all ease 0.5s; -moz-transition: all ease 0.5s; -ms-transition: all ease 0.5s; -o-transition: all ease 0.5s; }
+.s-footer-menu a:hover, .s-footer-menu a:hover *{color: #005BAA;}
+.s-footer-copyright *{color:#3D3D3D;font-size: 16px;margin: 0;}
+.s-footer-copyright{border-top: 1px solid #D1D1D1; padding: 20px 0 !important;}
+.footer-wrapper{z-index: 99; background: #fff;}
+
+/* MARK: FORM */
+
+
+/* MARK: UX BLOCK - BLOG */
+
+@media screen and (max-width: 1366px){
+	
+}
+
+@media screen and (max-width: 1250px){
+	#header{padding:0 3%;z-index: 9999;}
+    #header.header-hidden{z-index: -1;}
+    
+}
+
+@media screen and (max-width:1024px){
+	#header{padding:0 5%;}
+    .button-style1 span{font-size: 14px;}
+}
+
+@media screen and (max-width:849px){
+    .medium-logo-center .flex-left{order: 1;}
+	.medium-logo-center .logo{order: 0;margin: 0;}
+    .nav>li>a{color:#005BAA;}
+    .nav>li>a>i.icon-menu { font-size: 32px; }
+    .nav>li{margin: 0;}
+    .nav li:first-child { margin-right: 10px !important; }
+    .sticky-jump .stuck:not(.ux-no-animation){padding: 0 5%;}
+
+    /*.mfp-container{background: rgba(0, 0, 0, 0.5);}*/
+    .off-canvas-left .mfp-content, .off-canvas-right .mfp-content{background-color: #005BAA;}
+    .searchform-wrapper.form-flat .flex-col:last-of-type { margin-left: 0; padding-right: 0; }
+    .form-flat input:not([type=submit]), .form-flat select, .form-flat textarea{background: #fff;}
+    .searchform-submit{position: absolute; top: 3px; right: 3px; height: calc(100% - 5px); align-items: center; justify-content: center; display: inline-flex ; background: lightgray; border-radius: 50%; width: 35px;}
+    .nav-uppercase>li>a{color:#fff !important;}
+    .nav-sidebar.nav-vertical>li+li { border-top: 1px solid rgba(255, 255, 255, 0.1); }
+    .searchform .button.icon i { font-size: 1em; color: #333; }
+    .main-menu-overlay, .mfp-close { display: block !important; }
+    .mfp-ready .mfp-close { opacity: 1; mix-blend-mode: unset; }
+    .form-flat .button.icon { position: absolute; top: -1px; right: -3px; }
+
+    .dev-userLogin{height: 36px;min-width: 90px;font-size: 12px;}
+    body.body-scroll-lock--active .mfp-wrap{z-index: 99999;}
+}
+
+@media screen and (max-width:700px){
+	
+}
+
+@media screen and (max-width:650px){
+	
+}
+
+@media screen and (max-width: 549px){
+	
+}

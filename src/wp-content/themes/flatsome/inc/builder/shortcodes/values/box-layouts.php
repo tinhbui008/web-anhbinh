@@ -1,0 +1,21 @@
+<?php
+return array(
+	'none'     => 'None',
+	'default'  => 'Default',
+	'normal'   => 'Normal',
+	'overlay'  => 'Overlay',
+	'shade'    => 'Shade',
+	'vertical' => 'Vertical',
+	'label'    => 'Label',
+	'push'     => 'Push',
+	'badge'    => 'Badge',
+	'bounce'   => 'Bounce',
+	'truyenthong'   => 'Truyền thông',
+	'daotao'   => 'Khóa đào tạo',
+	'thuthach'   => 'Thử thách VNPay',
+	//'ourwork'   => 'Our work',
+	//'newsGrid'   => 'News Grid',
+	//'ourstaff'   => 'Our Staff',
+	//'career'   => 'Career',
+	//'resource'   => 'Resource',
+);

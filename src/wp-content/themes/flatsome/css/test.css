@@ -1,0 +1,100 @@
+const tooltip = document.getElementById("tooltip");
+    const container = document.getElementById("gridContainer");
+    const boxes = document.querySelectorAll(".s-sukien-item");
+
+    boxes.forEach((box, index) => {
+        box.addEventListener("mouseenter", () => {
+            const tooltipText = box.dataset.tooltip;
+            tooltip.textContent = tooltipText;
+          
+            const boxRect = box.getBoundingClientRect();
+            const containerRect = container.getBoundingClientRect();
+          
+            const showLeft = boxRect.left > containerRect.left + containerRect.width / 2;
+          
+            tooltip.classList.remove("left", "right");
+            tooltip.classList.add(showLeft ? "left" : "right", "show");
+          
+            // Đặt vị trí tooltip theo offset của container (đã định vị)
+            const tooltipTop = box.offsetTop;
+            const tooltipLeft = showLeft
+              ? box.offsetLeft - tooltip.offsetWidth - 8
+              : box.offsetLeft + box.offsetWidth + 8;
+          
+            tooltip.style.top = `0px`;
+            tooltip.style.left = `${tooltipLeft}px`;
+          
+            // Sau khi tooltip hiển thị, ta mới đo được chính xác rect của tooltip
+            requestAnimationFrame(() => {
+              const tooltipRect = tooltip.getBoundingClientRect();
+              const arrowOffset = boxRect.top + boxRect.height / 2 - tooltipRect.top;
+          
+              // Cập nhật biến CSS cho mũi tên căn giữa box
+              tooltip.style.setProperty('--arrow-top', `${arrowOffset}px`);
+            });
+        });
+
+        box.addEventListener("mouseleave", () => {
+            tooltip.classList.remove("show");
+        });
+    });
+
+
+/* MARK: SỰ KIỆN */
+.s-sukien-container{background: url('../images/bg_sukien.png') no-repeat center;background-size: cover;padding-top:100px;padding-bottom: 550px;}
+.s-sukien-contain{ max-width: 1236px; margin: auto; background: linear-gradient(to right, #005AAB, #ED1C24); padding:4px; border-radius:40px 40px 24px 24px ; -webkit-border-radius:40px 40px 24px 24px ; -moz-border-radius:40px 40px 24px 24px ; -ms-border-radius:40px 40px 24px 24px ; -o-border-radius:40px 40px 24px 24px ; }
+.s-sukien-title{ text-align: center; color:#fff; font-size: 42px; font-weight: 600; margin: 0; padding:16px; }
+.s-sukien-main{ background: #fff; border-radius: 22px; -webkit-border-radius: 22px; -moz-border-radius: 22px; -ms-border-radius: 22px; -o-border-radius: 22px; padding:0 0 34px 0; }
+.s-sukien-tab{padding:24px;display: flex;gap:32px;align-items: center;justify-content: center;}
+.s-sukien-prev, .s-sukien-next{cursor: pointer;display: flex;align-items: center;}
+.s-sukien-timeNow{color:#111111;font-size: 28px;font-weight: 600;}
+.s-sukien-dates{display: flex;gap:8px;overflow: auto; max-height: 675px;}
+.s-sukien-box{width:calc(100% / 7 - 7px);}
+.s-sukien-date{width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 8px; -webkit-border-radius: 8px; -moz-border-radius: 8px; -ms-border-radius: 8px; -o-border-radius: 8px; background: #005BAA;color:#fff;font-size: 20px;font-weight: 600;padding:5px 12px;text-transform: capitalize;}
+.s-sukien-date span{font-weight: 500;font-size: 12px;display: block; margin-top: -4px;opacity: 0.6;}
+.s-sukien-list{display: flex;flex-direction: column;gap:8px;}
+.s-sukien-item{ min-height: 160px; background: #EAF4FE; border-radius:12px; -webkit-border-radius:12px; -moz-border-radius:12px; -ms-border-radius:12px; -o-border-radius:12px; padding:16px;position: relative;}
+.s-sukien-item-time{color:#005BAA;font-size: 28px;font-weight: bold;}
+.s-sukien-item-title{color:#111111;font-size: 16px;font-weight: 500;display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden;margin: 0;}
+.s-sukien-datesTop{padding:0 34px;padding-bottom: 8px;}
+.s-sukien-datesBottom{padding-left: 34px;padding-right: 20px;}
+.s-sukien-dates-main{padding-right: 6px;position: relative;}
+
+.tooltip { position: absolute; background-color: #005BAA; color: white; padding: 20px; padding-bottom: 38px; border-radius: 12px; white-space: nowrap; pointer-events: none; z-index: 1000; height: 675px; -webkit-border-radius: 12px; -moz-border-radius: 12px; -ms-border-radius: 12px; -o-border-radius: 12px;width:328px;opacity: 0; transition: opacity 0.2s ease; pointer-events: none;}
+.tooltip.left, .tooltip.right { transform: none;   }
+.tooltip.show { opacity: 1; }
+
+/* Mũi tên cho tooltip */ 
+.tooltip::after { content: ''; position: absolute; width: 0; height: 0; /*top: 50%; */top: var(--arrow-top); transform: translateY(-50%); -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -ms-transform: translateY(-50%); -o-transform: translateY(-50%); }
+/* Tooltip bên trái */ 
+.tooltip.left::after { left: 100%; border: 5px solid transparent; border-left: 5px solid #005BAA; }
+/* Tooltip bên phải */ 
+.tooltip.right::after { right: 100%; border: 5px solid transparent; border-right: 5px solid #005BAA;}
+
+
+/* width */
+.scrollBar-cs::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+.scrollBar-cs::-webkit-scrollbar-track {
+  box-shadow: none;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+ 
+/* Handle */
+.scrollBar-cs::-webkit-scrollbar-thumb {
+  background: rgb(176 176 176 / 50%);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.scrollBar-cs::-webkit-scrollbar-thumb:hover {
+  background: #B0B0B0; 
+  cursor: grabbing;
+}

@@ -1,0 +1,235 @@
+# WordPress .gitignore
+
+# ===================================
+# User Uploads & Media
+# ===================================
+# Uploads directory - file do user upload (ảnh, video, etc)
+/src/wp-content/uploads/*
+
+# Nhưng GIỮ LẠI .gitkeep nếu có
+!/src/wp-content/uploads/.gitkeep
+
+# ===================================
+# Cache & Temporary Files
+# ===================================
+/src/wp-content/cache/
+/src/wp-content/backup*/
+/src/wp-content/backups/
+/src/wp-content/upgrade/
+/src/wp-content/w3tc*/
+/src/wp-content/wflogs/
+
+# ===================================
+# Logs
+# ===================================
+*.log
+/src/wp-content/debug.log
+/src/wp-content/error_log
+/src/error_log
+/docker/*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ===================================
+# Database
+# ===================================
+# Ignore database dumps (ngoại trừ file init)
+*.sql
+*.sql.gz
+*.mysql
+*.db
+
+# Nhưng GIỮ LẠI database init file
+!/database/db.sql
+
+# ===================================
+# Docker Volumes Data
+# ===================================
+# Docker volume data (được quản lý bởi Docker)
+/docker/volumes/
+/docker/data/
+
+# SSL Let's encrypt (sensitive)
+# /docker/letsencrypt/*.json
+
+# SSL certificates (sensitive)
+/docker/ssl/*.pem
+/docker/ssl/*.key
+/docker/ssl/*.crt
+
+
+# Nhưng GIỮ LẠI folder structure
+!/docker/ssl/.gitkeep
+
+# ===================================
+# Environment Files
+# ===================================
+# Ignore environment files có password thật
+.env
+.env.local
+.env.*.local
+
+# Nhưng GIỮ LẠI template files
+!.env.*.example
+!/docker/env/.env.staging
+!/docker/env/.env.production
+
+# ===================================
+# IDE & Editor
+# ===================================
+# VSCode
+.vscode/
+*.code-workspace
+
+# PhpStorm / IntelliJ
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# ===================================
+# OS Files
+# ===================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.directory
+
+# ===================================
+# Package Managers
+# ===================================
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Composer
+/vendor/
+composer.lock
+
+# ===================================
+# WordPress Specific
+# ===================================
+# Advanced Cache
+/src/wp-content/advanced-cache.php
+/src/wp-content/object-cache.php
+
+# WP Rocket
+/src/wp-content/wp-rocket-config/
+
+# WP Super Cache
+/src/wp-content/wp-cache-config.php
+
+# Wordfence
+/src/wordfence-waf.php
+/src/.user.ini
+
+# ===================================
+# Build & Compiled Files
+# ===================================
+/dist/
+/build/
+*.min.js
+*.min.css
+*.map
+
+# Nhưng GIỮ LẠI vendor files của plugins
+# !/src/wp-content/plugins/*/vendor/
+# !/src/wp-content/plugins/*/*.min.js
+# !/src/wp-content/plugins/*/*.min.css
+
+# ===================================
+# Plugins & Themes (CUSTOM)
+# ===================================
+# Mặc định: COMMIT tất cả plugins và themes
+# Nếu muốn ignore plugin/theme nào đó, uncomment dòng tương ứng:
+
+# Ví dụ ignore Akismet (WordPress default plugin)
+# /src/wp-content/plugins/akismet/
+# /src/wp-content/plugins/hello.php
+
+# Ví dụ ignore theme mặc định của WordPress
+# /src/wp-content/themes/twentytwenty*/
+
+# ===================================
+# Security & Sensitive Files
+# ===================================
+# Backup files
+*.bak
+*.backup
+*.old
+*.orig
+*.tmp
+
+# Auth files
+.htpasswd
+.htaccess.bak
+
+# SSH keys
+*.pem
+*.key
+id_rsa*
+*.ppk
+
+# ===================================
+# Development
+# ===================================
+# Test files
+/tests/
+phpunit.xml
+.phpunit.result.cache
+
+# Coverage reports
+/coverage/
+.nyc_output/
+
+# ===================================
+# Misc
+# ===================================
+# Temporary files
+*.tmp
+*.temp
+*~
+
+# Archives
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# Nhưng GIỮ LẠI plugin/theme distribution files nếu cần
+!/src/wp-content/plugins/*/*.zip
+!/src/wp-content/themes/*/*.zip
+
+# Khác
+/docker/setup-plugins.bat
+/docker/setup-plugins.sh
+/docker/*.md
+GIT-GUIDE.md
+readme_sample.txt

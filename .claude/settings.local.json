@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(docker logs:*)",
+      "Bash(docker exec:*)",
+      "Bash(docker version:*)",
+      "Bash(docker stop:*)",
+      "Bash(docker rm:*)",
+      "Bash(docker-compose:*)",
+      "Bash(curl -I http://localhost)",
+      "Bash(docker volume:*)",
+      "Bash(docker run:*)",
+      "Bash(nslookup:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
